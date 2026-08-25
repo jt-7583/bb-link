@@ -38,7 +38,8 @@
 enum hardware_board_t {
   hardware_board_unknown = 0,
   hardware_board_tinypico = 1,
-  hardware_board_pico32 = 2
+  hardware_board_pico32 = 2,
+  hardware_board_huzzah32 = 3
 };
 
 #if defined(ARDUINO_TINYPICO)
@@ -49,6 +50,12 @@ enum hardware_board_t {
 
 #if defined(ARDUINO_ESP32_PICO)
 #define HARDWARE_BOARD hardware_board_pico32
+#define HARDWARE_VERSION_MAJOR 1
+#define HARDWARE_VERSION_MINOR 0
+#endif
+
+#if defined(ARDUINO_ESP32_DEV)
+#define HARDWARE_BOARD hardware_board_huzzah32
 #define HARDWARE_VERSION_MAJOR 1
 #define HARDWARE_VERSION_MINOR 0
 #endif
